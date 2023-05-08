@@ -62,7 +62,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
         move_uploaded_file($fileTemp, '../upload/'.$namefile);
 
         mysqli_query($conn, "INSERT INTO user (name, email, photo) VALUES ('$name', '$email', '$namefile')");
-        // mysqli_query($conn, "INSERT INTO bpkb (id, tahun, kode_satker, update_on, published, $jenisdok) VALUES('', $tahun, '$kd', CURRENT_TIMESTAMP, 'publshed', '$namefile')");
     } catch (Throwable $t) {
         $resp = 500;
         $data['message'] = $t->getMessage();
